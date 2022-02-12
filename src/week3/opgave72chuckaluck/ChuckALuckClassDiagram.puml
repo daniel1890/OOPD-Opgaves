@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam class {
+BackgroundColor LightGrey
+ArrowColor Black
+BorderColor Black
+BackgroundColor<<Foo>> DarkGrey
+}
+skinparam classAttributeIconSize 0
+skinparam backgroundcolor Gray
+skinparam stereotypeCBackgroundColor YellowGreen
+
+class MainApp {
+-spel : ChuckALuckSpel
++main() : void
+}
+
+class ChuckALuckSpel {
+-dobbelbeker : Dobbelbeker
+-ronde : int
+-saldo : int
+-geluksGetal : int
++werpGeldIn() : void
++betaalUit() : void
++speelRonde() : void
++toString() : String
+}
+
+class Dobbelbeker {
+-dobbelstenen : Dobbelsteen[]
++gooiBeker() : void
++toString() : String
+}
+
+class DobbelSteen {
+-getal : int
++getGetal() : int
++setGetal() : void
++toString() : String
+}
+
+MainApp -right-> "1" ChuckALuckSpel : spel
+ChuckALuckSpel -down-> "1" Dobbelbeker : beker
+Dobbelbeker -left-> "3" DobbelSteen : dobbelstenen
+
+@enduml

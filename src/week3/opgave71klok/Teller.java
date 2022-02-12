@@ -1,27 +1,27 @@
-package week3.opgave72klok;
+package week3.opgave71klok;
 
 class Teller{
     private int maximum;
     private int waarde;
     private float x, y, hoogte, breedte;
-    MainApp app;
+    private MainApp app;
 
     Teller(MainApp app, int maximum, float x, float y, float breedte, float hoogte){
+        this.waarde = 0;
+
         this.app = app;
         this.maximum = maximum;
-        waarde = 0;
         this.x = x;
         this.y = y;
         this.breedte = breedte;
         this.hoogte = hoogte;
-
     }
 
-    void tik(){
+    public void tik(){
         waarde = (waarde + 1) % maximum;
     }
 
-    void tekenTeller(){
+    public void tekenTeller(){
         app.rectMode(app.CENTER);
         app.noStroke();
         app.fill(0);
@@ -74,7 +74,7 @@ class Teller{
         this.breedte = breedte;
     }
 
-    String geefTijdNotatie(){
+    private String geefTijdNotatie(){
         if (waarde < 10){
             return "0" + waarde;
         } else {

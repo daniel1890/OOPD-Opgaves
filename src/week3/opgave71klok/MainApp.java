@@ -1,12 +1,12 @@
-package week3.opgave72klok;
+package week3.opgave71klok;
 
 import processing.core.PApplet;
 
 public class MainApp extends PApplet {
-    Klok klok;
+    private Klok klok;
 
     public static void main(String[] args){
-        PApplet.main(new String[]{"week3.opgave72klok.MainApp" });
+        PApplet.main(new String[]{"week3.opgave71klok.MainApp" });
     }
 
     public void settings() {
@@ -17,10 +17,6 @@ public class MainApp extends PApplet {
         background(255);
 
         klok = new Klok(this,150, 100, 100);
-        klok.setTijd(22, 58);
-        klok.tik();
-        klok.tik();
-        klok.tekenKlok();
     }
 
     public void draw(){

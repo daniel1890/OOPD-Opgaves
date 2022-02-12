@@ -1,17 +1,16 @@
-package week3.opgave72klok;
+package week3.opgave71klok;
 
 class Klok{
-    Teller minutenTeller;
-    Teller urenTeller;
-    float x, y, hoogte, breedte;
+    private Teller minutenTeller;
+    private Teller urenTeller;
 
-    Klok(MainApp app, float x, float y, float breedte){
-        hoogte = breedte * 0.4f;
+    public Klok(MainApp app, float x, float y, float breedte){
+        float hoogte = breedte * 0.4f;
         urenTeller = new Teller(app, 24, x, y, breedte / 2, hoogte);
         minutenTeller = new Teller(app, 60, x + breedte / 2, y, breedte / 2, hoogte);
     }
 
-    void setTijd(int uren, int minuten){
+    public void setTijd(int uren, int minuten){
         minutenTeller.setWaarde(uren);
         urenTeller.setWaarde(minuten);
     }
@@ -52,14 +51,14 @@ class Klok{
         minutenTeller.setBreedte(breedte / 2);
     }
 
-    void tik(){
+    public void tik(){
         minutenTeller.tik();
         if (minutenTeller.getWaarde() == 0){
             urenTeller.tik();
         }
     }
 
-    void tekenKlok(){
+    public void tekenKlok(){
         urenTeller.tekenTeller();
         minutenTeller.tekenTeller();
     }
