@@ -21,22 +21,23 @@ class ChuckALuckSpel {
 -ronde : int
 -saldo : int
 -geluksGetal : int
-+werpGeldIn() : void
+-aantalWinnendeWorpen : int
++werpGeldIn(int bedrag) : void
 +betaalUit() : void
-+speelRonde() : void
++speelRonde(int geluksgetal, int inzet) : void
 +toString() : String
 }
 
 class Dobbelbeker {
+-aantalKeerGeluksGetalGeworpen : int
 -dobbelstenen : Dobbelsteen[]
-+gooiBeker() : void
 +toString() : String
 }
 
 class DobbelSteen {
 -getal : int
-+getGetal() : int
-+setGetal() : void
+-werpDobbelsteen() : void
++isGetalGelijkAanGeluksGetal : boolean
 +toString() : String
 }
 
