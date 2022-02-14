@@ -23,7 +23,7 @@ class ChuckALuckSpel {
 -geluksGetal : int
 -aantalWinnendeWorpen : int
 +werpGeldIn(int bedrag) : void
-+betaalUit() : void
++betaalUit() : int
 +speelRonde(int geluksgetal, int inzet) : void
 +toString() : String
 }
@@ -31,13 +31,14 @@ class ChuckALuckSpel {
 class Dobbelbeker {
 -aantalKeerGeluksGetalGeworpen : int
 -dobbelstenen : Dobbelsteen[]
++aantalGetallenGelijkAanGeluksGetal(int GeluksGetal) : int
 +toString() : String
 }
 
 class DobbelSteen {
--getal : int
+-huidigGetal : int
 -werpDobbelsteen() : void
-+isGetalGelijkAanGeluksGetal : boolean
++isHuidigGetalGelijkAanGeluksGetal(int geluksGetal) : boolean
 +toString() : String
 }
 
