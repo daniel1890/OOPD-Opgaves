@@ -47,3 +47,4 @@ ChuckALuckSpel -down-> "1" Dobbelbeker : beker
 Dobbelbeker -left-> "3" DobbelSteen : dobbelstenen
 
 @enduml
+© 2022 GitHub, Inc.

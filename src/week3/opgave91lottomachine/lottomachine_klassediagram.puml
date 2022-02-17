@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam class {
+BackgroundColor LightGrey
+ArrowColor Black
+BorderColor Black
+BackgroundColor<<Foo>> DarkGrey
+}
+skinparam classAttributeIconSize 0
+skinparam backgroundcolor Gray
+skinparam stereotypeCBackgroundColor YellowGreen
+
+class Lottomachine {
+-bol : Glazenbol
+-bord : Scorebord
++Lottomachine() : Lottomachine
++voerTrekkingUit() : void
+}
+
+class Glazenbol {
+-ballen : ArrayList<Lottobal>
++Glazenbol() : Glazenbol
++verzamelAlleBallen() : ArrayList<Lottobal>
++schepBal() : Lottobal
+}
+
+class Scorebord {
+-ballen : ArrayList<Lottobal>
++Scorebord() : Scorebord
++maakLeeg() : void
++plaatsBal(bal : Lottobal) : void
++plaatsBonusBal(bal : Lottobal) : void
++sorteerBallen() : void
++printScoreBord() : void
+}
+
+class Lottobal {
+-balNummer : int
++Lottobal(nummer : int) : Lottobal
++isNummerGroterDan(andereBal : Lottobal) : boolean
++toString() : String
+}
+
+Lottomachine "1" --> "1" Glazenbol
+Lottomachine "1" --> "1" Scorebord
+Glazenbol "1" --> "1..*" Lottobal
+Scorebord "1" --> "1..*" Lottobal
+
+@enduml

@@ -1,7 +1,6 @@
 package week3.opgave83foreachverwijderen;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class VerwijderenForEach {
@@ -24,7 +23,7 @@ public class VerwijderenForEach {
 //                lijst.remove(element);
 //            }
 
-            // een voorbeeld van een foreach loop die een Iterator gebruikt, met deze loop worden de elementen wel op een juiste wijze één voor één verwijdert
+            // een voorbeeld van een foreach loop die een Iterator gebruikt, met deze loop worden de elementen wel op een juiste manier één voor één verwijdert
             System.out.println(lijst);
             for(Iterator<String> i = lijst.iterator(); i.hasNext();) {
                 String name = i.next();
