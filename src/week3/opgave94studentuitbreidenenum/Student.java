@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Student {
     private String naam;
-    private String geslacht;
+    private Geslacht geslacht;
     private int studentNummer;
 
     public enum Geslacht { MAN, VROUW};
@@ -16,14 +16,11 @@ public class Student {
         nStudenten++;
     }
 
-    public String getGeslacht() {
+    public Geslacht getGeslacht() {
         return geslacht;
     }
     public void setGeslacht(Geslacht geslacht) {
-        switch (geslacht) {
-            case MAN -> this.geslacht = "man";
-            case VROUW -> this.geslacht = "vrouw";
-        }
+        this.geslacht = geslacht;
     }
 
     public static int getNStudenten() {

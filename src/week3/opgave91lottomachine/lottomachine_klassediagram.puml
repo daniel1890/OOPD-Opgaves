@@ -45,6 +45,6 @@ class Lottobal {
 Lottomachine "1" --> "1" Glazenbol
 Lottomachine "1" --> "1" Scorebord
 Glazenbol "1" --> "1..*" Lottobal
-Scorebord "1" --> "1..*" Lottobal
+Scorebord "1" --> "0..*" Lottobal
 
 @enduml
