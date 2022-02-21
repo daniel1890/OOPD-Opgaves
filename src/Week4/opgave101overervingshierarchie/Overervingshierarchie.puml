@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam class {
+BackgroundColor LightGrey
+ArrowColor Black
+BorderColor Black
+BackgroundColor<<Foo>> DarkGrey
+}
+skinparam classAttributeIconSize 0
+skinparam backgroundcolor Gray
+skinparam stereotypeCBackgroundColor YellowGreen
+
+class Levensvorm
+class Dier
+class Vrucht
+class Mens
+class "Kiwi" as KiwiDier
+class "Kiwi" as KiwiVrucht
+class "Kiwi" as KiwiMens
+
+Levensvorm <|-- Dier
+Levensvorm <|-- Vrucht
+Dier <|-- Mens
+Vrucht <|-- KiwiVrucht
+Mens <|-- KiwiMens
+Dier <|-- KiwiDier
+
+
+@enduml
