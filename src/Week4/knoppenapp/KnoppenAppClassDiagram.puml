@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam class {
+BackgroundColor LightGrey
+ArrowColor Black
+BorderColor Black
+BackgroundColor<<Foo>> DarkGrey
+}
+skinparam backgroundcolor Gray
+skinparam stereotypeCBackgroundColor YellowGreen
+
+abstract class Knop {
++ handelInteractieAf() : void
+{abstract} # doeKnopActie() : void
+}
+
+class Switch {
++ handelInteractieAf() : void
+}
+
+class Licht {
+
+}
+
+class LichtSwitch {
+# doeKnopActie() : void
+}
+
+Switch --|> Knop
+LichtSwitch --|> Switch
+LichtSwitch --> Licht
+@enduml

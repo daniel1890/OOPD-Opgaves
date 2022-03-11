@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam class {
+BackgroundColor LightGrey
+ArrowColor Black
+BorderColor Black
+BackgroundColor<<Foo>> DarkGrey
+}
+skinparam backgroundcolor Gray
+skinparam stereotypeCBackgroundColor YellowGreen
+
+class Persoon {
+# naam : String
+# voornaam : String
++ Persoon(naam : String, voornaam : String) : Persoon
++ getNaam() : String
++ setNaam(naam : String) : void
++ getVoornaam() : String
++ setVoornaam(voornaam : String) : void
+}
+
+class Student {
+# nummer : int
+# SLBer : Docent
++ Student(naam : String, voornaam : String, nummer : int, SLBer : Docent) : Student
++ getNummer() : int
++ setNummer(nummer : int) : void
++ getSLBer() : Persoon
++ setSLBer(SLBer : Docent) : void
+}
+
+class Docent {
+# code : String
++ Docent(naam : String, voornaam : String, code : String) : Docent
++ getCode() : String
++ setCode(code : String) : void
+}
+
+Student --|> Persoon
+Docent --|> Persoon
+@enduml
