@@ -12,7 +12,11 @@ public class TekenApp extends PApplet {
     }
 
     private ArrayList<Figuur> figurenLijst = new ArrayList<>();
-    private String huidigGereedschap = "selecteer";
+    private IGereedschap cirkelGereedschap = new CirkelGereedschap(figurenLijst);
+    private IGereedschap rechthoekGereedschap = new RechthoekGereedschap(figurenLijst);
+    private IGereedschap selecteerGereedschap = new SelecteerGereedschap();
+    private IGereedschap gumGereedschap = new GumGereedschap(figurenLijst);
+    private IGereedschap huidigGereedschap = selecteerGereedschap;
 
     public void settings() {
         size(400, 400);
@@ -26,43 +30,15 @@ public class TekenApp extends PApplet {
     }
 
     public void mousePressed() {
-        switch (huidigGereedschap) {
-            case "selecteer":
-                System.out.println("s");
-                break;
-            case "rechthoek":
-                Rechthoek r = new Rechthoek( mouseX, mouseY, 50, 50);
-                figurenLijst.add(r);
-                break;
-            case "cirkel":
-                Cirkel c = new Cirkel(mouseX, mouseY, 50);
-                figurenLijst.add(c);
-                break;
-            case "gum":
-                for (int i = figurenLijst.size() - 1; i >= 0; i--) {
-                    Figuur fig = figurenLijst.get(i);
-                    if (fig.isMuisBinnen(mouseX, mouseY, this)) {
-                        figurenLijst.remove(i);
-                    }
-                }
-                break;
-        }
+        huidigGereedschap.pasGereedschapToe(this);
     }
 
     public void keyReleased() {
         switch (key) {
-            case 's':
-                huidigGereedschap = "selecteer";
-                break;
-            case 'r':
-                huidigGereedschap = "rechthoek";
-                break;
-            case 'c':
-                huidigGereedschap = "cirkel";
-                break;
-            case 'g':
-                huidigGereedschap = "gum";
-                break;
+            case 's' -> huidigGereedschap = selecteerGereedschap;
+            case 'r' -> huidigGereedschap = rechthoekGereedschap;
+            case 'c' -> huidigGereedschap = cirkelGereedschap;
+            case 'g' -> huidigGereedschap = gumGereedschap;
         }
     }
 }
